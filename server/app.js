@@ -1,11 +1,17 @@
 const express= require("express")
+const connectDB = require("./config/db")
+const dotenv = require("dotenv")
+const courseRoutes = require("./routes/courseRoutes")
+
 const app =express()
 
 
-app.get("/welcome", (req,res)=>{
-    res.send("Welcome back")
+dotenv.config()
 
-})
+app.use("/api/courses",courseRoutes)
+
+connectDB()
+
 
 
 app.listen(3000,()=>{
