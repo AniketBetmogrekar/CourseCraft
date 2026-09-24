@@ -12,7 +12,7 @@ courseRoutes.get("/:id",getCourseById)
 
 courseRoutes.put("/:id",protect,authorize('instructor','admin'),updateCourse)
 
-courseRoutes.delete("/:id",authorize('instructor','admin'),deleteCourse)
+courseRoutes.delete("/:id",deleteCourse)
 
 
 
